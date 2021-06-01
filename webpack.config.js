@@ -22,7 +22,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'JS DATA STRUCTURES AND ALGORITHMS',
+            title: 'JS design patterns',
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],
