@@ -1,9 +1,3 @@
-enum Works {
-    CODE = '程序员',
-    UI = '设计师',
-    TEACH = '教师',
-}
-
 class Ball {
     constructor(private boll: string) {}
 }
@@ -14,7 +8,7 @@ export class Prototype {
     public name: string
     constructor() {}
 
-    clone():Prototype {
+    clone(): Prototype {
         const clone = Object.create(this)
         clone.ball = Object.create(this.ball)
         clone.date = Object.create(this.date)

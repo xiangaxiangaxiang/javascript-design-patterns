@@ -9,3 +9,4 @@ export { Person } from './creational/builder'
 // 结构型设计模式
 export { Adapter } from './structural/adapter'
 export { BuySomething } from './structural/facade'
+export { MyProxy } from './structural/proxy'
