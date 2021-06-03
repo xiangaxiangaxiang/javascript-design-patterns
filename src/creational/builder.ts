@@ -64,6 +64,7 @@ export class Person {
     }
 }
 
+console.log('========= 建造者模式 =========')
 const person = new Person('px', 'c', Works.CODE, '撸代码', '旅行')
 console.log(person.human.getHobby())
 console.log(person.human.getSkill())

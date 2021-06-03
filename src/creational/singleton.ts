@@ -12,6 +12,7 @@ export class Singleton {
 }
 
 // example
+console.log('========= 单例模式 =========')
 const i1 = Singleton.getInstance()
 const i2 = Singleton.getInstance()
 

@@ -63,6 +63,7 @@ export function SportsFactory(name: Sports) {
 }
 
 // example
+console.log('========= 简单工厂模式 =========')
 const football = SportsFactory(Sports.FOOTBALL)
 football.say()
 football.getMember()

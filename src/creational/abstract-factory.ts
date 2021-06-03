@@ -3,7 +3,7 @@ interface AbstractBall {
     produceFootball(): Football
 }
 
-class AntaFactory implements AbstractBall {
+export class AntaFactory implements AbstractBall {
     produceBasketball() {
         return new AntaBasketball()
     }
@@ -12,7 +12,7 @@ class AntaFactory implements AbstractBall {
     }
 }
 
-class PikeFactory {
+export class PikeFactory implements AbstractBall {
     produceBasketball() {
         return new PikeBasketball()
     }
