@@ -11,3 +11,11 @@ export { Adapter } from './structural/adapter'
 export { BuySomething } from './structural/facade'
 export { MyProxy } from './structural/proxy'
 export { Decorator } from './structural/decorator'
+export {
+    Circular,
+    Square,
+    RedGraphics,
+    GreenGraphics,
+} from './structural/bridge'
+export { ElementNode, TextNode } from './structural/composite'
+export { Person as Flyweight } from './structural/flyweight'

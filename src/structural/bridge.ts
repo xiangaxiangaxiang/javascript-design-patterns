@@ -1,32 +1,61 @@
-interface Implementation {
-    operationImplementation(): string;
+interface Shape {
+    draw: () => string
 }
 
-class Abstraction {
+abstract class Graphics {
+    constructor(protected shape: Shape) {}
 
-    constructor(protected implementation: Implementation) {}
+    abstract coloring(): void
+}
 
-    public operation(): string {
-        const result = this.implementation.operationImplementation();
-        return `Abstraction: Base operation with:\n${result}`;
+abstract class RefinedGraphics extends Graphics {
+    constructor(protected shape: Shape) {
+        super(shape)
+    }
+
+    coloring() {
+        console.log(this.getColor() + this.shape.draw())
+    }
+
+    protected abstract getColor(): string
+}
+
+export class RedGraphics extends RefinedGraphics {
+    constructor(protected shape: Shape) {
+        super(shape)
+    }
+
+    getColor() {
+        return '红色'
     }
 }
 
-class ExtendedAbstraction extends Abstraction {
-    public operation(): string {
-        const result = this.implementation.operationImplementation();
-        return `ExtendedAbstraction: Extended operation with:\n${result}`;
+export class GreenGraphics extends RefinedGraphics {
+    constructor(protected shape: Shape) {
+        super(shape)
+    }
+
+    getColor() {
+        return '绿色'
     }
 }
 
-class ConcreteImplementationA implements Implementation {
-    public operationImplementation(): string {
-        return 'ConcreteImplementationA: Here\'s the result on the platform A.';
+export class Circular implements Shape {
+    draw() {
+        return '圆形'
     }
 }
 
-class ConcreteImplementationB implements Implementation {
-    public operationImplementation(): string {
-        return 'ConcreteImplementationB: Here\'s the result on the platform B.';
+export class Square implements Shape {
+    draw() {
+        return '正方形'
     }
 }
+
+console.log('========= 桥接模式 =========')
+// 使用桥接模式的好处在于如果需要增加一个形状， 只需要实现shape接口，需要增加一种颜色的图形，只需要实现RefinedGraphics就行
+const redCircular = new RedGraphics(new Circular())
+redCircular.coloring()
+
+const greenSquare = new GreenGraphics(new Square())
+greenSquare.coloring()
