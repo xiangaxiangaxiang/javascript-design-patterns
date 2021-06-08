@@ -19,3 +19,8 @@ export {
 } from './structural/bridge'
 export { ElementNode, TextNode } from './structural/composite'
 export { Person as Flyweight } from './structural/flyweight'
+
+// 行为型设计模式
+export { Store } from './behavioral/observer'
+export { HandlerChain } from './behavioral/chain-of-responsibility'
+export { TextEditor, CopyComand, PasteComand } from './behavioral/command'
